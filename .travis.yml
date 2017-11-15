@@ -5,6 +5,7 @@ compiler:
   - clang
 
 before_script:
+  - cd 1_HelloWorld
   - mkdir build
   - cd build
   - cmake ..
