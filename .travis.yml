@@ -3,8 +3,16 @@ language: cpp
 compiler:
   - gcc
   - clang
-before_script:
-  - sudo apt-get install libsdl2-dev
+  
+sudo: required
+
+before_install:
+    - wget https://www.libsdl.org/release/SDL2-2.0.5.tar.gz -O SDL2-2.0.5.tar.gz
+    - tar -xzvf SDL2-2.0.7.tar.gz
+
+install:
+    - "(cd SDL2-2.0.7 && ./configure && make && sudo make install)"
+  
   
 script:
 #task 1 HelloWorld
