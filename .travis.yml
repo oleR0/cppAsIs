@@ -4,10 +4,27 @@ compiler:
   - gcc
   - clang
 
-before_script:
+script:
+#task 1 HelloWorld
   - cd 1_HelloWorld
-  - mkdir build
+  - if [ -d "build" ]; then mkdir build
   - cd build
   - cmake ..
+  - make
+  - ./hello
 
-script: make
+ #task 2 SDL Dynamic
+  - cd ..\..\2_SDL_Dynamic
+  - if [ -d "build" ]; then mkdir build
+  - cd build
+  - cmake ..
+  - make
+  - ./SDL-Dynamic
+  
+#task 2 SDL Static
+  - cd ..\..\2_SDL_Static
+  - if [ -d "build" ]; then mkdir build
+  - cd build
+  - cmake ..
+  - make
+  - ./SDL-Static
