@@ -33,7 +33,7 @@ elseif(UNIX)
                -Wl,
                #-lm
                -ldl
-               #-lpthread
+               -lpthread
                #-lrt
                )
 endif()
