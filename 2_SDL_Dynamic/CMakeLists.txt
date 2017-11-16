@@ -10,5 +10,5 @@ add_executable(SDL-Dynamic ${SOURCE_FILES})
 #target_link_libraries(2 ${SDL2_LIBRARIES}) it must work, but it doesn't...
 #what is -mwindows???
 
-target_link_libraries(SDL-Dynamic "-lSDL2main -lSDL2.dll")
+target_link_libraries(SDL-Dynamic "-lSDL2main -lSDL2")
                         
