@@ -29,8 +29,8 @@ if (MINGW)
 elseif(UNIX)
 	find_library(SDL2_LIB libSDL2.a)
 	target_link_libraries(${PROJECT_NAME} 
-               "${SDL2_LIB}"
                -Wl,--no-undefined
+			   "${SDL2_LIB}"
                -lm
                -ldl
                -lpthread
