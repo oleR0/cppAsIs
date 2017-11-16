@@ -7,7 +7,7 @@ compiler:
 sudo: required
 
 before_install:
-    - wget https://www.libsdl.org/release/SDL2-2.0.5.tar.gz -O SDL2-2.0.5.tar.gz
+    - wget https://www.libsdl.org/release/SDL2-2.0.7.tar.gz -O SDL2-2.0.7.tar.gz
     - tar -xzvf SDL2-2.0.7.tar.gz
 
 install:
