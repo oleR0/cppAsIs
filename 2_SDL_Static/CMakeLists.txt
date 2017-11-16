@@ -31,7 +31,7 @@ elseif(UNIX)
 	target_link_libraries(${PROJECT_NAME} 
                "${SDL2_LIB}"
                -Wl,
-               #-lm
+               -lm
                -ldl
                -lpthread
                #-lrt
