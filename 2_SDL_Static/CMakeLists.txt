@@ -28,8 +28,12 @@ if (MINGW)
                )
 elseif(UNIX)
 	find_library(SDL2_LIB libSDL2.a)
-	target_link_libraries(SDL-Static
-				-Wl, ${SDL2_LIB}
-				-ldl
-				)
+	target_link_libraries(${PROJECT_NAME} 
+               "${SDL2_LIB}"
+               -Wl,--no-undefined
+               -lm
+               -ldl
+               -lpthread
+               -lrt
+               )
 endif()
