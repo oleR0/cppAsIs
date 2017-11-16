@@ -16,7 +16,7 @@ script:
   - ./hello
 
  #task 2 SDL Dynamic
-  - cd ..\..\2_SDL_Dynamic
+  - cd ../../2_SDL_Dynamic
   - 'if [ ! -d "./build" ];
         then mkdir build;
      fi'
@@ -26,7 +26,7 @@ script:
   - ./SDL-Dynamic
   
 #task 2 SDL Static
-  - cd ..\..\2_SDL_Static
+  - cd ../../2_SDL_Static
   - 'if [ ! -d "./build" ];
         then mkdir build;
      fi'
