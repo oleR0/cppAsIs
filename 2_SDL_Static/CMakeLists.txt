@@ -29,7 +29,7 @@ if (MINGW)
 elseif(UNIX)
 	find_library(SDL2_LIB libSDL2.a)
 	target_link_libraries(SDL-Static
-				-Wl, SDL2.a
+				-Wl, ${SDL2_LIB}
 				-ldl
 				)
 endif()

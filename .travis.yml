@@ -7,12 +7,13 @@ compiler:
 sudo: required
 
 before_install:
-    - sudo apt-get install git curl libsdl2-mixer-2.0-0 libsdl2-image-2.0-0 libsdl2-2.0-0
-    - wget https://www.libsdl.org/release/SDL2-2.0.7.tar.gz -O SDL2-2.0.7.tar.gz
-    - tar -xzvf SDL2-2.0.7.tar.gz
+#    - sudo apt-get install git curl libsdl2-mixer-2.0-0 libsdl2-image-2.0-0 libsdl2-2.0-0
+    - sudo apt-get install libsdl2-dev
+#    - wget https://www.libsdl.org/release/SDL2-2.0.7.tar.gz -O SDL2-2.0.7.tar.gz
+#    - tar -xzvf SDL2-2.0.7.tar.gz
 
 install:
-    - "(cd SDL2-2.0.7 && ./configure && make && sudo make install)"
+#    - "(cd SDL2-2.0.7 && ./configure && make && sudo make install)"
   
   
 script:
