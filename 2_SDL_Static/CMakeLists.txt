@@ -34,6 +34,6 @@ elseif(UNIX)
                -lm
                -ldl
                -lpthread
-               #-lrt
+               -lrt
                )
 endif()
