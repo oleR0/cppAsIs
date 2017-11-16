@@ -7,8 +7,8 @@ compiler:
 script:
 #task 1 HelloWorld
   - cd 1_HelloWorld
-  - 'if [ ! -d "./build" ]
-        then mkdir build
+  - 'if [ ! -d "./build" ];
+        then mkdir build;
      fi'
   - cd build
   - cmake ..
@@ -17,8 +17,8 @@ script:
 
  #task 2 SDL Dynamic
   - cd ..\..\2_SDL_Dynamic
-  - 'if [ ! -d "./build" ]
-        then mkdir build
+  - 'if [ ! -d "./build" ];
+        then mkdir build;
      fi'
   - cd build
   - cmake ..
@@ -27,8 +27,8 @@ script:
   
 #task 2 SDL Static
   - cd ..\..\2_SDL_Static
-  - 'if [ ! -d "./build" ]
-        then mkdir build
+  - 'if [ ! -d "./build" ];
+        then mkdir build;
      fi'
   - cd build
   - cmake ..
