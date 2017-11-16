@@ -9,7 +9,8 @@ script:
   - cd 1_HelloWorld
   - 'if [ ! -d "./build" ]
         then mkdir build
-     fi'  - cd build
+     fi'
+  - cd build
   - cmake ..
   - make
   - ./hello
@@ -18,7 +19,8 @@ script:
   - cd ..\..\2_SDL_Dynamic
   - 'if [ ! -d "./build" ]
         then mkdir build
-     fi'  - cd build
+     fi'
+  - cd build
   - cmake ..
   - make
   - ./SDL-Dynamic
