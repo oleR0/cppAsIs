@@ -59,7 +59,6 @@ script:
   - cd build
   - cmake ..
   - make
-  - ./SDL-Init
   
 #task 3 Micro Engine DLL
   - cd ../../03_MicroEngine
@@ -69,9 +68,9 @@ script:
   - cd build
   - cmake ..
   - make
-  - cp libengine.so /usr/local/lib/libengine.so
+  - cp libengine.so /usr/local/lib/
   
-#task 3 SDL Init
+#task 3 Game
   - cd ../../03_Game
   - 'if [ ! -d "./build" ];
         then mkdir build;

@@ -4,12 +4,15 @@
 #include <map>
 #include <string>
 
+#ifdef _WIN32
 #ifdef BUILD_ENGINE
 #define DECLSPEC __declspec(dllexport)
 #else
 #define DECLSPEC __declspec(dllimport)
 #endif
-
+#else
+#define DECLSPEC
+#endif
 enum class log_level { log_warning, log_error };
 
 class Logger {
