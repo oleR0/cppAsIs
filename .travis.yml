@@ -78,6 +78,6 @@ script:
   - cd build
   - cmake ..
   - make
-  - sudo cp game ..
+  - sudo cp game ./../
   - cd ..
   - ./game
