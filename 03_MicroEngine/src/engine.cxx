@@ -97,6 +97,6 @@ bool TME::read_event(TME::e_event& event) {
 }
 
 int TME::finish() {
-  SDL_Quit;
+  SDL_Quit();
   return EXIT_SUCCESS;
 }

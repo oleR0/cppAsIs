@@ -78,4 +78,5 @@ script:
   - cd build
   - cmake ..
   - make
-  - ./game ../config.json
+  - sudo cp game ..
+  - ./game
