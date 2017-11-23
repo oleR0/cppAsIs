@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.4)
-project(game.exe)
+project(game)
 set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES src/game.cxx)
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
