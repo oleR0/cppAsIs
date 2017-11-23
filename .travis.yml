@@ -79,4 +79,5 @@ script:
   - cmake ..
   - make
   - sudo cp game ..
+  - cd ..
   - ./game
