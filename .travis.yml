@@ -84,4 +84,4 @@ script:
   - sudo cp game ./../
   - cd ..
   - sudo ls -la
-  - ./game
+#  - ./game
