@@ -1,4 +1,4 @@
-#include "./../include/engine.hxx"
+#include "engine.hxx"
 #include <SDL2/SDL.h>
 #include <fstream>
 #include <iostream>

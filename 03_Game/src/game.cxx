@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "../include/engine.hxx"
+#include "engine.hxx"
 
 int main(int a, char** b) {
   std::string init_result = TME::init("config.json");

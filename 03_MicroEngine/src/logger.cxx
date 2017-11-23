@@ -1,4 +1,4 @@
-#include "./../include/engine.hxx"
+#include "engine.hxx"
 Logger::Logger(const std::string& log_file) {
   if (log_file.empty())
     log.open("Engine.log");
