@@ -6,18 +6,13 @@ compiler:
   
 sudo: required
 
-before_install:
-    - sudo apt-get install libsdl2-2.0-0
-    - wget https://www.libsdl.org/release/SDL2-2.0.7.tar.gz -O SDL2-2.0.7.tar.gz
-    - tar -xzvf SDL2-2.0.7.tar.gz
-
-install:
-    - "(cd SDL2-2.0.7 && ./configure && make && sudo make install)"
-  
-  
+install: 
+    - sudo apt-get update
+    - sudo apt-get install libsdl2-dev
+    
 script:
 #task 1 HelloWorld
-  - cd 1_HelloWorld
+  - cd 01_HelloWorld
   - 'if [ ! -d "./build" ];
         then mkdir build;
      fi'
@@ -27,7 +22,7 @@ script:
   - ./hello
 
  #task 2 SDL Dynamic
-  - cd ../../2_SDL_Dynamic
+  - cd ../../02_SDL_Dynamic
   - 'if [ ! -d "./build" ];
         then mkdir build;
      fi'
@@ -37,7 +32,7 @@ script:
   - ./SDL-Dynamic
   
 #task 2 SDL Static
-  - cd ../../2_SDL_Static
+  - cd ../../02_SDL_Static
   - 'if [ ! -d "./build" ];
         then mkdir build;
      fi'
@@ -45,3 +40,33 @@ script:
   - cmake ..
   - make
   - ./SDL-Static
+  
+#task 3 SDL Init
+  - cd ../../03_SDL_Init
+  - 'if [ ! -d "./build" ];
+        then mkdir build;
+     fi'
+  - cd build
+  - cmake ..
+  - make
+  - ./SDL-Init
+  
+#task 3 Micro Engine DLL
+  - cd ../../03_MicroEngine
+  - 'if [ ! -d "./build" ];
+        then mkdir build;
+     fi'
+  - cd build
+  - cmake ..
+  - make
+  - cp libengine.so /usr/local/lib/libengine.so
+  
+#task 3 SDL Init
+  - cd ../../03_Game
+  - 'if [ ! -d "./build" ];
+        then mkdir build;
+     fi'
+  - cd build
+  - cmake ..
+  - make
+  - ./game ../config.json
