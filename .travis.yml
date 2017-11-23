@@ -68,7 +68,7 @@ script:
   - cd build
   - cmake ..
   - make
-  - cp libengine.so /usr/local/lib/
+  - sudo cp libengine.so /usr/local/lib
   
 #task 3 Game
   - cd ../../03_Game
