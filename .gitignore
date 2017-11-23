@@ -1,0 +1,7 @@
+*/.cproject
+*/.project
+*.xml
+*.prefs
+*/build/
+*/Debug/
+*.log

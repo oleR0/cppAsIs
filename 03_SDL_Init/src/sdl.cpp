@@ -27,9 +27,8 @@ int main(int /*argc*/, char* /*argv*/ []) {
 
   if (SDL_COMPILEDVERSION !=
       SDL_VERSIONNUM(linked.major, linked.minor, linked.patch)) {
-    log_file
-        << "Warning, compiled SDL version differes from linked SDL version."
-        << endl;
+    log_file << "Warning, compiled SDL version differs from linked SDL version."
+             << endl;
   }
 
   const int init_result = SDL_Init(SDL_INIT_EVERYTHING);
@@ -38,6 +37,8 @@ int main(int /*argc*/, char* /*argv*/ []) {
     log_file << "Error: failed call SDL_Init: " << err << "." << endl;
     return EXIT_FAILURE;
   }
+
+  atexit(SDL_Quit);
 
   SDL_Window* const window =
       SDL_CreateWindow("First SDL Window", SDL_WINDOWPOS_CENTERED,
@@ -63,14 +64,8 @@ int main(int /*argc*/, char* /*argv*/ []) {
       string_event += "Action: ";
 
       if (sdl_event.type == SDL_KEYDOWN || sdl_event.type == SDL_KEYUP) {
-        switch (sdl_event.type) {
-          case SDL_KEYDOWN:
-            string_event += "key pressed";
-            break;
-          case SDL_KEYUP:
-            string_event += "key released";
-            break;
-        }
+        (sdl_event.type == SDL_KEYDOWN) ? string_event += "key pressed"
+                                        : string_event += "key released";
 
         string_event += ", button: ";
 
@@ -91,6 +86,5 @@ int main(int /*argc*/, char* /*argv*/ []) {
       log_file << string_event << endl;
     }
   }
-
   return EXIT_SUCCESS;
 }

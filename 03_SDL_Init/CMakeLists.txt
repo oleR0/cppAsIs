@@ -1,15 +1,13 @@
 cmake_minimum_required(VERSION 2.8.4)
-project(SDL-Static)
+project(SDL-Init)
 set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES src/sdl.cpp)
-add_executable(SDL-Static ${SOURCE_FILES})
+add_executable(SDL-Init ${SOURCE_FILES})
 
 
 if (MINGW)
-	#set(CMAKE_PREFIX_PATH c:/mingw-w64/mingw64/x86_64-w64-mingw32/lib)
-	#find_library(SDL2_LIB libSDL2.a)
-
-	target_link_libraries(SDL-Static
+	
+	target_link_libraries(SDL-Init
                -Wl, SDL2.a
                -lm
                -ldinput8
