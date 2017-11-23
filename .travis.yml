@@ -8,7 +8,9 @@ sudo: required
 
 install: 
     - sudo apt-get update
-    - sudo apt-get install libsdl2-dev
+    - sudo apt-get upgrade
+    - sudo apt-get -f install
+    - sudo apt-get -f install libsdl2-dev
     
 script:
 #task 1 HelloWorld
