@@ -13,21 +13,6 @@
 #else
 #define DECLSPEC
 #endif
-enum class log_level { log_warning, log_error };
-
-class Logger {
- public:
-  static Logger& get_instance(const std::string&);
-  void add_log(const std::string&, log_level);
-
- private:
-  std::ofstream log;
-  Logger() = delete;
-  Logger(const std::string&);
-  ~Logger();
-  Logger(const Logger&) = delete;
-  Logger& operator=(const Logger&) = delete;
-};
 
 namespace TME {  // Tanks MicroEngine
 

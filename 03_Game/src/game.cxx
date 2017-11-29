@@ -11,11 +11,13 @@ int main(int a, char** b) {
 
   while (continue_loop) {
     TME::e_event event;
-    TME::read_event(event);
-    std::cout << ((event.action == TME::Action::move_start) ? "start " : "end ")
-              << event.move << std::endl;
-    if (!event.move.compare("Select")) {
-      continue_loop = false;
+    while (TME::read_event(event)) {
+      std::cout << ((event.action == TME::Action::move_start) ? "start "
+                                                              : "end ")
+                << event.move << std::endl;
+      if (!event.move.compare("Select")) {
+        continue_loop = false;
+      }
     }
   }
   return TME::finish();

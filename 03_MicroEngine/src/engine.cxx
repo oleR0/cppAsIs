@@ -8,6 +8,22 @@
 
 using json = nlohmann::json;
 
+enum class log_level { log_warning, log_error };
+
+class Logger {
+ public:
+  static Logger& get_instance(const std::string&);
+  void add_log(const std::string&, log_level);
+
+ private:
+  std::ofstream log;
+  Logger() = delete;
+  Logger(const std::string&);
+  ~Logger();
+  Logger(const Logger&) = delete;
+  Logger& operator=(const Logger&) = delete;
+};
+
 const std::string TME::init(const std::string& config_file) {
   std::ifstream config_stream(config_file);
   if (!config_stream.good()) {
@@ -66,37 +82,54 @@ const std::string TME::init(const std::string& config_file) {
 
 bool TME::read_event(TME::e_event& event) {
   SDL_Event sdl_event;
-  static std::queue<TME::e_event> good_events;
 
-  //так как нужно знать, есть ли дальше нужный нам event (а не любой),
-  //приходится извращаться
-  if (good_events.size()) {
-    event = good_events.front();
-    good_events.pop();
-    return (good_events.size()) ? true : false;
-  }
+  if (SDL_PollEvent(&sdl_event)) {
+    if (sdl_event.type == SDL_KEYDOWN || sdl_event.type == SDL_KEYUP) {
+      (sdl_event.type == SDL_KEYDOWN) ? event.action = TME::Action::move_start
+                                      : event.action = TME::Action::move_end;
 
-  bool good_event = false;
-  while (!good_event) {
-    while (SDL_PollEvent(&sdl_event)) {
-      e_event e;
-      if (sdl_event.type == SDL_KEYDOWN || sdl_event.type == SDL_KEYUP) {
-        (sdl_event.type == SDL_KEYDOWN) ? e.action = TME::Action::move_start
-                                        : e.action = TME::Action::move_end;
-
-        std::string button(SDL_GetKeyName(sdl_event.key.keysym.sym));
-        if (buttons.count(button)) {
-          e.move = buttons[button];
-          good_events.push(e);
-          good_event = true;
-        }
+      std::string button(SDL_GetKeyName(sdl_event.key.keysym.sym));
+      if (buttons.count(button)) {
+        event.move = buttons[button];
+        return true;
       }
     }
   }
-  return read_event(event);
+  return false;
 }
 
 int TME::finish() {
   SDL_Quit();
   return EXIT_SUCCESS;
+}
+
+Logger::Logger(const std::string& log_file) {
+  if (log_file.empty())
+    log.open("Engine.log");
+  else
+    log.open(log_file);
+}
+
+Logger::~Logger() {
+  log.close();
+}
+
+Logger& Logger::get_instance(const std::string& log_file) {
+  static Logger instance(log_file);
+  return instance;
+}
+
+void Logger::add_log(const std::string& log_string, log_level level) {
+  if (!log)
+    return;
+
+  std::string prefix;
+  switch (level) {
+    case log_level::log_warning:
+      prefix = "Warning: ";
+    case log_level::log_error:
+      prefix = "Error: ";
+  }
+
+  log << prefix << log_string << "." << std::endl;
 }
