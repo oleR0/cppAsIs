@@ -10,8 +10,8 @@ using json = nlohmann::json;
 #if __MINGW32__
 #include <SDL2/SDL_opengl.h> // on windows for mingw
 #else
+#include <SDL2/SDL_opengl.h>
 #include <SDL2/SDL_opengl_glext.h>
-#include <SDL2/SDL_opengles2.h>
 #endif
 
 #define STRINGIFY(x) #x
