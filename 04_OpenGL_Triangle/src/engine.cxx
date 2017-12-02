@@ -1,11 +1,9 @@
 #include "engine.hxx"
 #include "./../nlohmann_json/json.hpp"
 #include <SDL2/SDL.h>
-#include <any>
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <vector>
 
 using json = nlohmann::json;
 

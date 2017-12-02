@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.4)
 project(game)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES_EXE src/game.cxx)
 set(SOURCE_FILES_ENGINE src/engine.cxx nlohmann_json/json.hpp include/engine.hxx)
