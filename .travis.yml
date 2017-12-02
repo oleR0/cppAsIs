@@ -87,7 +87,7 @@ script:
 #  - ./game
 
 #task 4 OpenGL Triangle
-  - cd ../../04_OpenGL_Triangle
+  - cd ../04_OpenGL_Triangle
   - 'if [ ! -d "./build" ];
         then mkdir build;
      fi'
