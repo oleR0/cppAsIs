@@ -85,3 +85,13 @@ script:
   - cd ..
   - sudo ls -la
 #  - ./game
+
+#task 4 OpenGL Triangle
+  - cd ../../04_OpenGL_Triangle
+  - 'if [ ! -d "./build" ];
+        then mkdir build;
+     fi'
+  - cd build
+  - cmake ..
+  - make
+#  - ./game
