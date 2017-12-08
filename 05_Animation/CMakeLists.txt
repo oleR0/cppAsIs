@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.0.0)
 project(game)
 
 set(SOURCE_FILES_EXE src/game.cxx)
@@ -6,7 +6,6 @@ set(SOURCE_FILES_ENGINE src/engine.cxx nlohmann_json/json.hpp lodepng/lodepng.cp
 
 add_definitions(-DBUILD_ENGINE)
 add_library(engine SHARED ${SOURCE_FILES_ENGINE})
-target_compile_features(engine PUBLIC cxx_std_17)
 
 target_include_directories(engine PRIVATE include)
 
