@@ -1,7 +1,4 @@
 cmake_minimum_required(VERSION 3.0.0)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1z")
-
 project(game)
 
 set(SOURCE_FILES_EXE src/game.cxx)
@@ -9,6 +6,7 @@ set(SOURCE_FILES_ENGINE src/engine.cxx nlohmann_json/json.hpp lodepng/lodepng.cp
 
 add_definitions(-DBUILD_ENGINE)
 add_library(engine SHARED ${SOURCE_FILES_ENGINE})
+target_compile_features(engine PUBLIC cxx_std_17)
 
 target_include_directories(engine PRIVATE include)
 
@@ -23,7 +21,7 @@ endif()
     
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES_EXE})
-
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 #link_directories(../../03_MicroEngine/build/)
 target_link_libraries(${PROJECT_NAME} engine)
