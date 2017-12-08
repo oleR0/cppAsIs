@@ -95,3 +95,33 @@ script:
   - cmake ..
   - make
 #  - ./game
+
+#task 5 Triangles Morphing
+  - cd ../../05_Morphing
+  - 'if [ ! -d "./build" ];
+        then mkdir build;
+     fi'
+  - cd build
+  - cmake ..
+  - make
+  #  - ./game
+  
+  #task 5 Texture
+  - cd ../../05_Texture
+  - 'if [ ! -d "./build" ];
+        then mkdir build;
+     fi'
+  - cd build
+  - cmake ..
+  - make
+  #  - ./game
+  
+  #task 5 Texture's Animation
+  - cd ../../05_Animation
+  - 'if [ ! -d "./build" ];
+        then mkdir build;
+     fi'
+  - cd build
+  - cmake ..
+  - make
+  #  - ./game

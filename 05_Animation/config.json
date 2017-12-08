@@ -1,0 +1,13 @@
+{
+	"LogFile": "Engine.log",
+	"Buttons": {
+		"Left": "MoveLeft",
+		"Right": "MoveRight",
+		"Up": "MoveUp",
+		"Down": "MoveDown",
+		"D": "FirstAction",
+		"F": "SecondAction",
+		"Return": "Start",
+		"Escape": "Select"
+	}
+}

@@ -11,4 +11,8 @@ Own Micro Engine based on SDL. Micro game.
 
 Task 4.
 First triangle in OpenGL.
+
+Task 5.
+Triangles Morphing, first texture and it's animation
+
 [![Build Status](https://travis-ci.org/oleR0/cppAsIs.svg?branch=master)](https://travis-ci.org/oleR0/cppAsIs)
