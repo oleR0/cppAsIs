@@ -107,7 +107,7 @@ script:
   #  - ./game
   
   #task 5 Texture
-  - cd ../../05_Texture
+  - cd ../../05_Textures
   - 'if [ ! -d "./build" ];
         then mkdir build;
      fi'
