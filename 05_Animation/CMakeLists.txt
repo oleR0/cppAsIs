@@ -20,7 +20,6 @@ endif()
     
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES_EXE})
-target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 #link_directories(../../03_MicroEngine/build/)
 target_link_libraries(${PROJECT_NAME} engine)
