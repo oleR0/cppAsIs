@@ -15,7 +15,9 @@ First triangle in OpenGL.
 Task 5.
 Triangles Morphing, first texture and it's animation
 
-Task6.
+Task 6.
 Multiplying by matrices both on CPU and GPU. First moves of a tank.
 
+Task 7.
+Sounds + some kind of OOP.
 [![Build Status](https://travis-ci.org/oleR0/cppAsIs.svg?branch=master)](https://travis-ci.org/oleR0/cppAsIs)
